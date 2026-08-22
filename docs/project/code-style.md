@@ -1,35 +1,13 @@
 # Code Style
 
-## Formatting
+This page's content split across two files in the repository root, which are
+also what an AI coding agent reads:
 
-tmuxp uses [ruff](https://github.com/astral-sh/ruff) for both linting and formatting.
+- Formatting, linting, type checking, and import conventions — the commands
+  and the gates they are part of — moved to [CONTRIBUTING.md], under "The
+  gates" and "Imports and typing".
+- The docstring convention — the prose rule, not the command that enforces
+  it — moved to [WRITING.md], under "Docstrings".
 
-```console
-$ uv run ruff format .
-```
-
-```console
-$ uv run ruff check . --fix --show-fixes
-```
-
-## Type Checking
-
-Strict [mypy](https://mypy-lang.org/) is enforced.
-
-```console
-$ uv run mypy
-```
-
-## Docstrings
-
-All public functions and methods use
-[NumPy-style docstrings](https://numpydoc.readthedocs.io/en/latest/format.html).
-
-## Imports
-
-- Standard library: namespace imports (`import pathlib`, not `from pathlib import Path`)
-  - Exception: `from dataclasses import dataclass, field` for
-    {func}`~dataclasses.dataclass` and {func}`~dataclasses.field`
-- Typing: `import typing as t`, access via {data}`t.Optional <typing.Optional>`,
-  {class}`t.NamedTuple <typing.NamedTuple>`, etc.
-- All files: `from __future__ import annotations`
+[CONTRIBUTING.md]: https://github.com/tmux-python/tmuxp/blob/master/.github/CONTRIBUTING.md
+[WRITING.md]: https://github.com/tmux-python/tmuxp/blob/master/.github/WRITING.md
